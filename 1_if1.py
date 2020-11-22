@@ -14,12 +14,22 @@
 
 """
 
+def what_to_do(age):
+    if 4 <= age < 7:
+        return "Enjoy your life while you can"
+    elif 7 <= age < 18:
+        return "Choose math over girls"
+    elif 18 <= age < 23:
+        return "Knowledge > Grades"
+    elif age >= 23:
+        return "Welcome to the club" 
+    else: 
+        raise ValueError("Age must be in [4; inf)")
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    age = int(input("Enter your age: "))
+    status = what_to_do(age)
+    print(status)
 
 if __name__ == "__main__":
     main()
