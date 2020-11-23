@@ -11,11 +11,7 @@
 """
 
 def avg(lst):
-    sum = 0
-    for i in lst:
-        sum += i
-    avg = sum / len(lst)
-    return avg
+    return sum(lst) / len(lst)
 
 def main():
     class_list = [
@@ -33,8 +29,8 @@ def main():
         # Build a list of averages for all classes in school
         class_avg_list.append(class_avg)
     
-    print("School average")
-    print(round(avg(class_avg_list), 2))
+    school_avg = round(avg(class_avg_list), 2)
+    print(f"School average is {school_avg}")
 
 if __name__ == "__main__":
     main()
