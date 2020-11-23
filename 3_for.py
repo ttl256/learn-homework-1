@@ -10,12 +10,32 @@
 * Посчитать и вывести средний балл по каждому классу.
 """
 
+def avg(lst):
+    sum = 0
+    for i in lst:
+        sum += i
+    avg = sum / len(lst)
+    return avg
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    class_list = [
+        {'school_class': '4a', 'scores': [3,4,4,5,2]},
+        {'school_class': '5a', 'scores': [3,4,4,5,2,5,5,5]},
+        {'school_class': '7a', 'scores': [3,4,4,5]}
+    ]
+
+    print("Class average")
+    class_avg_list = []
+    for class_ in class_list:
+        # Calculate average score for a class
+        class_avg = round(avg(class_.get("scores")), 2)
+        class_name = class_.get("school_class")
+        print(f"{class_name}  {class_avg}")
+        # Build a list of averages for all classes
+        class_avg_list.append(class_avg)
     
+    print("School average")
+    print(round(avg(class_avg_list), 2))
+
 if __name__ == "__main__":
     main()
