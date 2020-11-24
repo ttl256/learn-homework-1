@@ -15,13 +15,18 @@
     
 """
 
-questions_and_answers = {}
+questions_and_answers = {
+    "Wazzup!": "WAZUUUUUUP!",
+    "How are you going?": "Alright",
+    "Are you hungry?": "Nah, I'm fine"
+}
 
 def ask_user(answers_dict):
-    """
-    Замените pass на ваш код
-    """
-    pass
+    while True:
+        get_input = input("Enter your question: ")
+        if get_input in questions_and_answers:
+            print(questions_and_answers.get(get_input))
+
     
 if __name__ == "__main__":
     ask_user(questions_and_answers)
